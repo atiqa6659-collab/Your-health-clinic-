@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Health Clinic</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f8fffd;
+    color:#333;
+}
+
+nav{
+    background:#ffffff;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#287c78;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#287c78;
+}
+
+.page{
+    display:none;
+}
+
+.page.active-page{
+    display:block;
+}
+
+.hero{
+    min-height:90vh;
+    padding:80px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:linear-gradient(135deg,#effbf8,#ffffff);
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#287c78;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:17px;
+    line-height:1.7;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    background:#287c78;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    cursor:pointer;
+    border:none;
+}
+
+.btn:hover{
+    background:#1f625f;
+}
+
+.hero-box{
+    width:380px;
+    height:300px;
+    background:linear-gradient(135deg,#d9f2ed,#fff4d6);
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+}
+
+section{
+    padding:70px 7%;
+}
+
+.section-title{
+    text-align:center;
+    color:#287c78;
+    font-size:34px;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.card h3{
+    color:#287c78;
+    margin:15px 0;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+
+.icon{
+    font-size:45px;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-box{
+        width:280px;
+        height:220px;
+        font-size:60px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Your Health Clinic</div>
+
+<ul class="nav-links">
+<li><a id="homeNav" class="active" onclick="showPage('home')">Home</a></li>
+<li><a id="aboutNav" onclick="showPage('about')">About</a></li>
+<li><a id="servicesNav" onclick="showPage('services')">Services</a></li>
+<li><a id="doctorsNav" onclick="showPage('doctors')">Doctors</a></li>
+<li><a id="appointmentNav" onclick="showPage('appointment')">Appointment</a></li>
+<li><a id="contactNav" onclick="showPage('contact')">Contact</a></li>
+</ul>
+</nav>
+
+<div id="home" class="page active-page">
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Your Health, Our Priority</h1>
+
+<p>
+Welcome to Your Health Clinic.  
+We provide caring, professional and modern healthcare services for you and your family.
+</p>
+
+<button class="btn" onclick="showPage('appointment')">
+Book Appointment
+</button>
+</div>
+
+<div class="hero-box">
+🏥
+</div>
+
+</section>
+
+<section>
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🩺</div>
+<h3>General Checkup</h3>
+<p>Complete health checkups with professional medical care.</p>
+</div>
+
+<div class="card">
+<div class="icon">❤️</div>
+<h3>Heart Care</h3>
+<p>Quality healthcare and guidance for your heart health.</p>
+</div>
+
+<div class="card">
+<div class="icon">👩‍⚕️</div>
+<h3>Expert Doctors</h3>
+<p>Experienced doctors providing trusted healthcare services.</p>
+</div>
+
+</div>
+</section>
+
+</div>
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+
+<section>
+<h2 class="section-title">About Your Health Clinic</h2>
+
+<div class="card">
+<h3>Your Health Matters</h3>
+
+<p>
+Your Health Clinic is a modern healthcare clinic dedicated
+to providing professional, caring and reliable medical services.
+Our goal is to make quality healthcare simple and accessible.
+</p>
+
+<br>
+
+<p>
+We believe every patient deserves respectful care,
+professional guidance and a comfortable healthcare experience.
+</p>
+</div>
+
+</section>
+
+</div>
+
+
+<!-- SERVICES PAGE -->
+<div id="services" class="page">
+
+<section>
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🩺</div>
+<h3>General Checkup</h3>
+<p>
+Complete medical checkups and professional health guidance.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">❤️</div>
+<h3>Heart Care</h3>
+<p>
+Professional guidance and healthcare support for heart health.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🧠</div>
+<h3>Specialist Consultation</h3>
+<p>
+Consult experienced doctors for your healthcare needs.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💊</div>
+<h3>Medical Guidance</h3>
+<p>
+Helpful medical advice and treatment guidance from professionals.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">👶</div>
+<h3>Child Care</h3>
+<p>
+Healthcare services and guidance for children and families.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🌿</div>
+<h3>Healthy Lifestyle</h3>
+<p>
+Guidance for maintaining a healthy and balanced lifestyle.
+</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- DOCTORS PAGE -->
+<div id="doctors" class="page">
+
+<section>
+
+<h2 class="section-title">Our Doctors</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">👩‍⚕️</div>
+<h3>Dr. Sarah Ahmed</h3>
+<p>General Physician</p>
+</div>
+
+<div class="card">
+<div class="icon">👨‍⚕️</div>
+<h3>Dr. Daniel Khan</h3>
+<p>Cardiologist</p>
+</div>
+
+<div class="card">
+<div class="icon">👩‍⚕️</div>
+<h3>Dr. Ayesha Malik</h3>
+<p>Family & Child Specialist</p>
+</div>
+
+</div>
+
+</section>
+
+</div><!-- APPOINTMENT PAGE -->
+<div id="appointment" class="page">
+
+<section>
+
+<h2 class="section-title">Book an Appointment</h2>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<form onsubmit="bookAppointment(event)">
+
+<label>Full Name</label>
+<input type="text" id="name" required
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;">
+
+<label>Email</label>
+<input type="email" id="email" required
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;">
+
+<label>Phone Number</label>
+<input type="tel" id="phone" required
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;">
+
+<label>Appointment Date</label>
+<input type="date" id="date" required
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;">
+
+<label>Select Service</label>
+<select id="service" required
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;">
+
+<option value="">Select a service</option>
+<option>General Checkup</option>
+<option>Heart Care</option>
+<option>Specialist Consultation</option>
+<option>Medical Guidance</option>
+<option>Child Care</option>
+<option>Healthy Lifestyle</option>
+
+</select>
+
+<label>Message</label>
+<textarea id="message"
+style="width:100%;padding:12px;margin:8px 0 18px;border:1px solid #ddd;border-radius:8px;height:120px;"></textarea>
+
+<button type="submit" class="btn">
+Send Appointment Request
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- CONTACT PAGE -->
+<div id="contact" class="page">
+
+<section>
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">📍</div>
+<h3>Location</h3>
+<p>Karachi, Pakistan</p>
+</div>
+
+<div class="card">
+<div class="icon">📞</div>
+<h3>Phone</h3>
+<p>+92 300 1234567</p>
+</div>
+
+<div class="card">
+<div class="icon">✉️</div>
+<h3>Email</h3>
+<p>Yourhealth@gmail.com</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer style="
+background:#287c78;
+color:white;
+text-align:center;
+padding:25px;
+">
+
+<p>Your Health Clinic</p>
+
+<p style="margin-top:8px;font-size:13px;">
+© 2026 Your Health Clinic. Demo website for portfolio purposes.
+</p>
+
+</footer>
+
+
+<script>
+
+function showPage(pageName){
+
+var pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+page.classList.remove("active-page");
+});
+
+document.getElementById(pageName).classList.add("active-page");
+
+var navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(function(link){
+link.classList.remove("active");
+});
+
+var activeNav = document.getElementById(pageName + "Nav");
+
+if(activeNav){
+activeNav.classList.add("active");
+}
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function bookAppointment(event){
+
+event.preventDefault();
+
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
+var date = document.getElementById("date").value;
+var service = document.getElementById("service").value;
+var message = document.getElementById("message").value;
+
+var subject = "New Appointment Request";
+
+var body =
+"Name: " + name + "\n" +
+"Email: " + email + "\n" +
+"Phone: " + phone + "\n" +
+"Date: " + date + "\n" +
+"Service: " + service + "\n" +
+"Message: " + message;
+
+window.location.href =
+"mailto:Yourhealth@gmail.com" +
+"?subject=" + encodeURIComponent(subject) +
+"&body=" + encodeURIComponent(body);
+
+}
+
+</script>
+
+</body>
+</html>
